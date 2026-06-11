@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.mail import send_mail
 from .models import Product
 
 
@@ -65,3 +66,14 @@ def product_delete(request, pk):
         return redirect('product_list')
 
     return render(request, 'product_delete.html', {'product': product})
+def send_test_email(request):
+    subject = 'Test Email'
+    message = 'This is a test email sent from Django.'
+    from_email = 'boyroyal4853@gmail.com'
+    recipient_list = ['geuvizegebre-9696@yopmail.com']  # Replace with actual recipient email
+
+    try:
+        send_mail(subject, message, from_email, recipient_list)
+        return render(request, 'Email_Seent.html', {'message': 'Test email sent successfully!'})
+    except Exception as e:
+        return render(request, 'Email_Seent.html', {'message': f'Error sending email: {str(e)}'})
