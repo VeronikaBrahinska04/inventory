@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Detail</title>
+</head>
+
+<body>
+
+    <h1>{{ product.name }}</h1>
+
+    <img src="{{ product.image.url }}" width="300">
+
+    <p>Price: ₹{{ product.price }}</p>
+
+    <p>Description: {{ product.description }}</p>
+
+    <p>Quantity: {{ product.quantity }}</p>
+
+    <p>Created: {{ product.created }}</p>
+
+    <a href="{% url 'product_list' %}">Back</a>
+
+</body>
+
+</html>
