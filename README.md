@@ -1,0 +1,1 @@
+Developed an Inventory Management System using Python and Django to manage products, track stock quantities, and perform CRUD operations with database integration. The project provides an efficient and user-friendly solution for inventory management.
